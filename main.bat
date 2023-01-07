@@ -7,8 +7,11 @@ curl -L -o Microsoft.WindowsStore.msixbundle https://www.dropbox.com/s/u4znvwuck
 powershell Add-AppxPackage -Path "%cd%\Microsoft.WindowsStore.msixbundle"
 echo succesfully installed MS Store, restarting in 3s
 timeout 3
+del Microsoft.WindowsStore.msixbundle
 shutdown -r -f -t 0
 :uninstall
 curl -L -O a.ps1 https://cdn.discordapp.com/attachments/860401848774033418/1061377361314054194/a.ps1
 powershell .\a.ps1
+timeout 1
+del a.ps1
 shutdown -r -f -t 0
